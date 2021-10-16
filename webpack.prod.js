@@ -1,6 +1,7 @@
 /* eslint-env node */
 const { merge } = require('webpack-merge');
 const TerserPlugin = require('terser-webpack-plugin');
+const { BannerPlugin } = require('webpack');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
 const common = require('./webpack.common.js');
