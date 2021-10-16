@@ -24,7 +24,7 @@ module.exports = merge(common, {
       new CssMinimizerPlugin({
         minimizerOptions: {
           preset: [
-            "default",
+            'default',
             {
               // cssのコメントはLICENSE含めて除去（BANNERに記載する）
               discardComments: { removeAll: true },
