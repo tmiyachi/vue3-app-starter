@@ -33,6 +33,12 @@ lint
 npm run lint
 ```
 
+fix & format
+
+```bash
+npm run fix
+```
+
 dev
 
 ```bash
