@@ -2,12 +2,10 @@
   <p>{{ greeting }} World</p>
 </template>
 
-<script>
-  export default {
-    data: () => ({
-      greeting: 'Hello',
-    }),
-  };
+<script setup>
+  import { ref } from 'vue';
+
+  const greeting = ref('Hello');
 </script>
 
 <style>
