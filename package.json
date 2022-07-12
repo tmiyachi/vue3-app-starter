@@ -3,7 +3,7 @@
   "version": "1.0.4",
   "description": "The application template for Vue.js 3.x",
   "dependencies": {
-    "core-js": "^3.23.1",
+    "core-js": "^3.23.2",
     "vue": "^3.2.37"
   },
   "devDependencies": {
