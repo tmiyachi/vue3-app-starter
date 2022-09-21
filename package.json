@@ -4,7 +4,7 @@
   "description": "The application template for Vue.js 3.x",
   "dependencies": {
     "core-js": "^3.24.1",
-    "vue": "^3.2.37"
+    "vue": "^3.2.38"
   },
   "devDependencies": {
     "@babel/core": "^7.18.10",
