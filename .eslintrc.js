@@ -9,5 +9,14 @@ module.exports = {
   rules: {
     'consistent-return': 'error',
     'no-sequences': 'error',
+    'no-unused-vars': [
+      'warn',
+      {
+        argsIgnorePattern: '^_',
+        varsIgnorePattern: '^_',
+        caughtErrorsIgnorePattern: '^_',
+        destructuredArrayIgnorePattern: '^_',
+      },
+    ],
   },
 };
