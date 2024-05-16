@@ -39,6 +39,8 @@
     "fix:prettier": "npm run lint:prettier -- --write",
     "fix": "run-s fix:*"
   },
+  "type": "module",
+  "main": "./src/index.js",
   "private": true,
   "keywords": [],
   "author": "tmiyachi",
