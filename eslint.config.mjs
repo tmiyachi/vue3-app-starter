@@ -1,12 +1,14 @@
-import { defineConfig } from "eslint/config";
+import { defineConfig } from 'eslint/config';
 import globals from 'globals';
-import pluginVue from 'eslint-plugin-vue'
+import pluginVue from 'eslint-plugin-vue';
 import eslintConfigPrettier from 'eslint-config-prettier/flat';
 
 /**
  * @see https://eslint.org/docs/latest/use/configure/
  */
 export default defineConfig([
+  ...pluginVue.configs['flat/recommended'],
+  eslintConfigPrettier,
   {
     ignores: ['dist/**/*'],
     languageOptions: {
@@ -30,6 +32,4 @@ export default defineConfig([
       ],
     },
   },
-  ...pluginVue.configs['flat/recommended'],
-  eslintConfigPrettier,
 ]);
