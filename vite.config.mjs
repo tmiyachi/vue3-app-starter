@@ -1,8 +1,11 @@
-/* eslint-env node */
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
-import path from 'path';
 import license from 'rollup-plugin-license';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const BANNER = `
 /*! FOLLOWING LIBRARIES ARE USED.
@@ -14,8 +17,8 @@ const BANNER = `
 export default defineConfig({
   plugins: [vue()],
 
-  // base: './', // ルートではないパブリックパスにデプロイする場合
   root: path.resolve(__dirname, 'src'),
+  base: './',
   publicDir: path.resolve(__dirname, 'public'),
   resolve: {
     extensions: ['.vue', '.js'],
@@ -27,10 +30,10 @@ export default defineConfig({
   build: {
     // target: ['firefox86'], // バンドルのブラウザ互換性のターゲットを指定する
     outDir: '../dist',
-    emptyOutDir: true,
     assetsDir: 'assets',
-    // assetsInlineLimit: 0,  // アセットのをbase64インライン化を無効にする場合
-    // sourcemap: true,
+    // assetsInlineLimit: 0, // アセットのをbase64インライン化を無効にする場合
+    // sourcemap: true, // ソースマップファイルを別に作成する
+    emptyOutDir: true, // ビルド時に outDir を空にする
 
     // assetsInclude
     rollupOptions: {
@@ -42,8 +45,6 @@ export default defineConfig({
       plugins: [
         license({
           sourcemap: true,
-          cwd: process.cwd(), // The default
-
           banner: BANNER,
           thirdParty: {
             // includePrivate: true, // Default is false.
