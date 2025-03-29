@@ -8,11 +8,13 @@ import eslintConfigPrettier from 'eslint-config-prettier/flat';
  * @see https://eslint.org/docs/latest/use/configure/
  */
 export default defineConfig([
+  {
+    ignores: ['dist/**/*'],
+  },
   js.configs.recommended,
   ...pluginVue.configs['flat/recommended'],
   eslintConfigPrettier,
   {
-    ignores: ['dist/**/*'],
     languageOptions: {
       ecmaVersion: 'latest',
       globals: {
